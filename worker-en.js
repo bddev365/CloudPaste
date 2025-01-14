@@ -3802,7 +3802,7 @@ createApp({
         // 创建提示元素
         const toast = document.createElement('div');
         toast.className = 'copy-toast';
-        toast.textContent = '链接已复制到剪贴板';
+        toast.textContent = 'The link has been copied to the clipboard.';
         document.body.appendChild(toast);
         
         // 显示提示
@@ -4074,24 +4074,24 @@ createApp({
           
           const copyButton = document.createElement('button');
           copyButton.className = 'code-copy-btn';
-          copyButton.textContent = '复制';
+          copyButton.textContent = 'COPY';
           wrapper.appendChild(copyButton);
           
           copyButton.addEventListener('click', async () => {
             try {
               await navigator.clipboard.writeText(block.textContent);
-              copyButton.textContent = '已复制!';
+              copyButton.textContent = 'COPIED';
               copyButton.classList.add('copied');
               
               setTimeout(() => {
-                copyButton.textContent = '复制';
+                copyButton.textContent = 'COPY';
                 copyButton.classList.remove('copied');
               }, 2000);
             } catch (err) {
               console.error('Failed to copy code:', err);
-              copyButton.textContent = '复制失败';
+              copyButton.textContent = 'COPY FAILED';
               setTimeout(() => {
-                copyButton.textContent = '复制';
+                copyButton.textContent = 'COPY';
               }, 2000);
             }
           });
@@ -4242,7 +4242,7 @@ createApp({
       const savedContent = localStorage.getItem('autosaved_content');
       if (savedContent) {
         // 如果有保存的内容，提示用户是否恢复
-        if (confirm('发现未保存的内容，是否恢复？')) {
+        if (confirm('Unsaved content detected. Would you like to restore it?')) {
           content.value = savedContent;
         }
         // 无论是否恢复，都清除保存的内容
@@ -4402,25 +4402,25 @@ createApp({
               // 创建复制按钮
               const copyButton = document.createElement('button');
               copyButton.className = 'code-copy-btn';
-              copyButton.textContent = '复制';
+              copyButton.textContent = 'COPY';
               wrapper.appendChild(copyButton);
               
               // 添加复制功能
               copyButton.addEventListener('click', async () => {
                 try {
                   await navigator.clipboard.writeText(block.textContent);
-                  copyButton.textContent = '已复制!';
+                  copyButton.textContent = 'COPIED';
                   copyButton.classList.add('copied');
                   
                   setTimeout(() => {
-                    copyButton.textContent = '复制';
+                    copyButton.textContent = 'COPY';
                     copyButton.classList.remove('copied');
                   }, 2000);
                 } catch (err) {
                   console.error('Failed to copy code:', err);
-                  copyButton.textContent = '复制失败';
+                  copyButton.textContent = 'COPY FAILED';
                   setTimeout(() => {
-                    copyButton.textContent = '复制';
+                    copyButton.textContent = 'COPY';
                   }, 2000);
                 }
               });
@@ -4575,22 +4575,7 @@ createApp({
   template: \`
 <div class="container">
 
-  <a href="https://github.com/ling-drag0n/CloudPaste" 
-     target="_blank" 
-     class="github-link" 
-     title="Visit GitHub"
-     v-html="githubIconSvg.__html">
-  </a>
-
-  <button 
-    class="theme-toggle" 
-    @click="toggleTheme" 
-    :title="'Current Theme: ' + currentTheme"
-    v-text="themeIcon"
-  >
-  </button>
-
-    <div class="card">
+      <div class="card">
       <!-- 标签页切换 -->
       <div class="tabs">
         <button 
@@ -5282,25 +5267,25 @@ createApp({
             // 创建复制按钮
             const copyButton = document.createElement('button');
             copyButton.className = 'code-copy-btn';
-            copyButton.textContent = '复制';
+            copyButton.textContent = 'COPY';
             wrapper.appendChild(copyButton);
             
             // 添加复制功能
             copyButton.addEventListener('click', async () => {
               try {
                 await navigator.clipboard.writeText(block.textContent);
-                copyButton.textContent = '已复制!';
+                copyButton.textContent = 'COPIED';
                 copyButton.classList.add('copied');
                 
                 setTimeout(() => {
-                  copyButton.textContent = '复制';
+                  copyButton.textContent = 'COPY';
                   copyButton.classList.remove('copied');
                 }, 2000);
               } catch (err) {
                 console.error('Failed to copy code:', err);
-                copyButton.textContent = '复制失败';
+                copyButton.textContent = 'COPY FAILED';
                 setTimeout(() => {
-                  copyButton.textContent = '复制';
+                  copyButton.textContent = 'COPY';
                 }, 2000);
               }
             });
@@ -5383,25 +5368,25 @@ createApp({
           // 创建复制按钮
           const copyButton = document.createElement('button');
           copyButton.className = 'code-copy-btn';
-          copyButton.textContent = '复制';
+          copyButton.textContent = 'COPY';
           wrapper.appendChild(copyButton);
           
           // 添加点击事件
           copyButton.addEventListener('click', async () => {
             try {
               await navigator.clipboard.writeText(codeBlock.textContent);
-              copyButton.textContent = '已复制!';
+              copyButton.textContent = 'COPIED';
               copyButton.classList.add('copied');
               
               setTimeout(() => {
-                copyButton.textContent = '复制';
+                copyButton.textContent = 'COPY';
                 copyButton.classList.remove('copied');
               }, 2000);
             } catch (err) {
               console.error('Failed to copy code:', err);
-              copyButton.textContent = '复制失败';
+              copyButton.textContent = 'COPY FAILED';
               setTimeout(() => {
-                copyButton.textContent = '复制';
+                copyButton.textContent = 'COPY';
               }, 2000);
             }
           });
@@ -5534,45 +5519,49 @@ createApp({
     const formatExpiryTime = computed(() => {
       // 文件分享的处理
       if (isFile.value && fileInfo.value) {
-        if (!fileInfo.value.expiresAt) return '永不过期';
-        
+        if (!fileInfo.value.expiresAt) return 'Never expires';
+      
         try {
-          const now = new Date();
-          const expiry = new Date(fileInfo.value.expiresAt);
-          if (isNaN(expiry.getTime())) return '永不过期';
-          
-          const diff = expiry - now;
-          if (diff <= 0) return '已过期';
-          
-          const hours = Math.floor(diff / (1000 * 60 * 60));
+          var now = new Date();
+          var expiry = new Date(fileInfo.value.expiresAt);
+      
+          if (isNaN(expiry.getTime())) return 'Never expires';
+      
+          var diff = expiry - now;
+      
+          if (diff <= 0) return 'Expired';
+      
+          var hours = Math.floor(diff / (1000 * 60 * 60));
+      
           if (hours < 24) {
-            return '将在 ' + hours + ' 小时后过期';
+            return 'Will expire in ' + hours + ' hour' + (hours !== 1 ? 's' : '');
           }
-          const days = Math.floor(hours / 24);
-          return '将在 ' + days + ' 天后过期';
+      
+          var days = Math.floor(hours / 24);
+          return 'Will expire in ' + days + ' day' + (days !== 1 ? 's' : '');
         } catch (e) {
-          return '永不过期';
+          return 'Never expires';
         }
-      }
+      }      
       
       // 文本分享的处理
       // 如果 expiresAt.value 为 null，直接返回永不过期
-      if (expiresAt.value === null) return '永不过期';
+      if (expiresAt.value === null) return 'Never expires';
       
       try {
         const now = new Date();
         const diff = expiresAt.value - now;
         
-        if (diff <= 0) return '已过期';
+        if (diff <= 0) return 'Expired';
         
         const hours = Math.floor(diff / (1000 * 60 * 60));
         if (hours < 24) {
-          return '将在 ' + hours + ' 小时后过期';
+          return 'Will expire in ' + hours + ' hours';
         }
         const days = Math.floor(hours / 24);
-        return '将在 ' + days + ' 天后过期';
+        return 'Will expire in ' + days + ' days';
       } catch (e) {
-        return '永不过期';
+        return 'Never expires';
       }
     });
 
@@ -5604,25 +5593,25 @@ createApp({
                   // 创建复制按钮
                   const copyButton = document.createElement('button');
                   copyButton.className = 'code-copy-btn';
-                  copyButton.textContent = '复制';
+                  copyButton.textContent = 'COPY';
                   wrapper.appendChild(copyButton);
                   
                   // 添加点击事件
                   copyButton.addEventListener('click', async () => {
                     try {
                       await navigator.clipboard.writeText(codeBlock.textContent);
-                      copyButton.textContent = '已复制!';
+                      copyButton.textContent = 'COPIED';
                       copyButton.classList.add('copied');
                       
                       setTimeout(() => {
-                        copyButton.textContent = '复制';
+                        copyButton.textContent = 'COPY';
                         copyButton.classList.remove('copied');
                       }, 2000);
                     } catch (err) {
                       console.error('Failed to copy code:', err);
-                      copyButton.textContent = '复制失败';
+                      copyButton.textContent = 'COPY FAILED';
                       setTimeout(() => {
-                        copyButton.textContent = '复制';
+                        copyButton.textContent = 'COPY';
                       }, 2000);
                     }
                   });
@@ -5666,25 +5655,25 @@ createApp({
               // 创建复制按钮
               const copyButton = document.createElement('button');
               copyButton.className = 'code-copy-btn';
-              copyButton.textContent = '复制';
+              copyButton.textContent = 'COPY';
               wrapper.appendChild(copyButton);
               
               // 添加复制功能
               copyButton.addEventListener('click', async () => {
                 try {
                   await navigator.clipboard.writeText(block.textContent);
-                  copyButton.textContent = '已复制!';
+                  copyButton.textContent = 'COPIED';
                   copyButton.classList.add('copied');
                   
                   setTimeout(() => {
-                    copyButton.textContent = '复制';
+                    copyButton.textContent = 'COPY';
                     copyButton.classList.remove('copied');
                   }, 2000);
                 } catch (err) {
                   console.error('Failed to copy code:', err);
-                  copyButton.textContent = '复制失败';
+                  copyButton.textContent = 'COPY FAILED';
                   setTimeout(() => {
-                    copyButton.textContent = '复制';
+                    copyButton.textContent = 'COPY';
                   }, 2000);
                 }
               });
@@ -5802,25 +5791,25 @@ createApp({
           // 创建复制按钮
           const copyButton = document.createElement('button');
           copyButton.className = 'code-copy-btn';
-          copyButton.textContent = '复制';
+          copyButton.textContent = 'COPY';
           wrapper.appendChild(copyButton);
           
           // 添加点击事件
           copyButton.addEventListener('click', async () => {
             try {
               await navigator.clipboard.writeText(codeBlock.textContent);
-              copyButton.textContent = '已复制!';
+              copyButton.textContent = 'COPIED';
               copyButton.classList.add('copied');
               
               setTimeout(() => {
-                copyButton.textContent = '复制';
+                copyButton.textContent = 'COPY';
                 copyButton.classList.remove('copied');
               }, 2000);
             } catch (err) {
               console.error('Failed to copy code:', err);
-              copyButton.textContent = '复制失败';
+              copyButton.textContent = 'COPY FAILED';
               setTimeout(() => {
-                copyButton.textContent = '复制';
+                copyButton.textContent = 'COPY';
               }, 2000);
             }
           });
@@ -6587,7 +6576,7 @@ createApp({
             });
 
           } catch (err) {
-            throw new Error('Word文档生成失败: ' + err.message);
+            throw new Error('The Word document generation failed: ' + err.message);
           }
         } else if (exportFormat.value === 'image') {
           // 图片导出逻辑
@@ -6607,7 +6596,7 @@ createApp({
         // 创建导出成功提示
         const toast = document.createElement('div');
         toast.className = 'copy-toast';
-        toast.textContent = '导出成功!';
+        toast.textContent = 'Export Successful!';
         document.body.appendChild(toast);
                     
         setTimeout(() => toast.classList.add('show'), 10);
@@ -6618,7 +6607,7 @@ createApp({
 
       } catch (err) {
         // 处理导出过程中遇到的错误
-        error.value = '导出失败: ' + err.message;
+        error.value = 'Export failed: ' + err.message;
         console.error('Export error:', err);
       } finally {
         isExporting.value = false; // 重置导出状态
@@ -6635,7 +6624,7 @@ createApp({
         // 创建提示元素
         const toast = document.createElement('div');
         toast.className = 'copy-toast';
-        toast.textContent = '已复制到剪贴板!';
+        toast.textContent = 'Copied to clipboard!';
         document.body.appendChild(toast);
         
         // 显示提示
@@ -6649,7 +6638,7 @@ createApp({
         
       } catch (err) {
         console.error('Copy failed:', err);
-        error.value = '复制失败: ' + err.message;
+        error.value = 'Copy failed: ' + err.message;
       }
     };
 
@@ -6762,13 +6751,7 @@ const shareHtml = `<!DOCTYPE html>
 
 <div id="app" v-cloak>
       <div class="container">
-        <!-- 主题切换按钮 -->
-        <button 
-          class="theme-toggle" 
-          @click="toggleTheme" 
-          :title="'Current Theme: ' + currentTheme"
-          v-text="themeIcon"
-        ></button>
+        
 
         <div class="card">
           <div v-if="loading" class="loading-state">
@@ -6821,6 +6804,7 @@ const shareHtml = `<!DOCTYPE html>
                   >
                     Edit Settings
                   </button>
+                  
                 </div>
                 
                 <template v-if="isFileEditing">
@@ -6884,6 +6868,8 @@ const shareHtml = `<!DOCTYPE html>
                     >
                       Edit Content
                     </button>
+                    <!-- <a href="/" target="_blank"><button class="btn">New Content</button></a> -->
+
                   </div>
                   
                   <div class="export-group" v-if="!isEditing">
