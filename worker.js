@@ -1,3 +1,6 @@
+// Copied from: ling-drag0n/CloudPaste
+// Github: https://github.com/ling-drag0n/CloudPaste/blob/main/worker.js
+
 // 在文件开头添加常量声明
 const MAX_FILE_SIZE = 98 * 1024 * 1024; // 文件大小限制 (98MB)
 const MAX_TOTAL_STORAGE = 6 * 1024 * 1024 * 1024; // 总存储限制 (6GB)
@@ -884,7 +887,7 @@ a.qr-btn {
   position: relative;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  white-space: pre-wrap;
+  white-space: normal;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -1032,7 +1035,7 @@ a.qr-btn {
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-all;
-  white-space: pre-wrap; /* 保留换行符并自动换行 */
+  white-space: normal; /* 保留换行符并自动换行 */
 }
 
 /* 段落样式 */
@@ -1079,7 +1082,7 @@ a.qr-btn {
   background: var(--markdown-code-bg);
   border-radius: 6px;
   overflow-x: auto; /* 允许横向滚动 */
-  white-space: pre-wrap; /* 允许自动换行 */
+  white-space: pre-line; /* 允许自动换行 */
   word-wrap: break-word; /* 允许长单词换行 */
   word-break: break-all; /* 允许在任意字符处换行 */
   max-width: 100%; /* 限制最大宽度 */
