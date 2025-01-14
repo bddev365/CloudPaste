@@ -4523,7 +4523,6 @@ createApp({
   },
 
   template: \`
-  ```vue
 <div class="container">
 
   <a href="https://github.com/ling-drag0n/CloudPaste" 
@@ -5026,7 +5025,6 @@ createApp({
       </div>
     </div>
   </div>
-```
   \`
 }).mount('#app');`;
 
