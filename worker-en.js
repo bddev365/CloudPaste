@@ -65,7 +65,7 @@ const styles = `
   top: 20px;
   right: 20px;
   z-index: 1000;
-  color: var(--text-color);  /* 使用主题颜色 */
+  color: var(--text-color); /* 使用主题颜色 */
   transition: color 0.3s ease;
 }
 
@@ -91,7 +91,7 @@ const styles = `
   --error-border: #ef5350;
   --error-text: #c62828;
   --code-bg: #f6f8fa;
-  --hover-bg: rgba(0,0,0,0.05);
+  --hover-bg: rgba(0, 0, 0, 0.05);
   --secondary-bg: #f8f9fa;
   --secondary-text: #666;
   --admin-panel-bg: white;
@@ -104,7 +104,7 @@ const styles = `
   --input-bg: white;
   --input-text: #2d3436;
   --input-placeholder: #999;
-  --scrollbar-thumb: rgba(0,0,0,0.2);
+  --scrollbar-thumb: rgba(0, 0, 0, 0.2);
   --scrollbar-track: transparent;
   --markdown-bg: white;
   --markdown-text: #24292e;
@@ -134,7 +134,7 @@ const styles = `
   --error-border: #b71c1c;
   --error-text: #ff5252;
   --code-bg: #2d2d2d;
-  --hover-bg: rgba(255,255,255,0.05);
+  --hover-bg: rgba(255, 255, 255, 0.05);
   /* 暗色主题特有变量 */
   --secondary-bg: #2d2d2d;
   --secondary-text: #aaa;
@@ -148,8 +148,8 @@ const styles = `
   --input-bg: #363636;
   --input-text: #e0e0e0;
   --input-placeholder: #666;
-  --scrollbar-thumb: rgba(255,255,255,0.2);
-  --scrollbar-track: rgba(255,255,255,0.05);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+  --scrollbar-track: rgba(255, 255, 255, 0.05);
   --markdown-bg: #22272e;
   --markdown-text: #adbac7;
   --markdown-heading-text: #e6edf3;
@@ -175,7 +175,11 @@ const styles = `
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -184,7 +188,7 @@ body {
 .card {
   background: var(--card-bg);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   margin-bottom: 1rem;
   width: fit-content;
@@ -206,10 +210,11 @@ body {
   cursor: pointer;
   border-bottom: 2px solid transparent;
   position: relative;
+  font-size: 16px;
 }
 
 .tab::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -234,6 +239,8 @@ body {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 13px;
 }
 
 .input-group {
@@ -245,7 +252,8 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.input-group input, .input-group select {
+.input-group input,
+.input-group select {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid var(--border-color);
@@ -428,7 +436,7 @@ a.qr-btn {
 .admin-panel {
   position: fixed;
   top: 20px;
-  right: 70px;  
+  right: 70px;
   z-index: 1000;
 }
 
@@ -436,7 +444,7 @@ a.qr-btn {
   background: white;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
   min-width: 300px;
 }
 
@@ -447,7 +455,7 @@ a.qr-btn {
   bottom: 0;
   width: 350px;
   background: var(--admin-panel-bg);
-  box-shadow: -2px 0 15px rgba(0,0,0,0.1);
+  box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   overflow-y: auto;
 }
@@ -537,7 +545,7 @@ a.qr-btn {
 
 /* 修改分享项布局 */
 .share-item {
-  position: relative;  /* 添加相对定位 */
+  position: relative; /* 添加相对定位 */
   padding: 1rem;
   background: var(--secondary-bg);
   border-radius: 8px;
@@ -549,7 +557,7 @@ a.qr-btn {
 .share-item .title {
   display: flex;
   align-items: center;
-  justify-content: space-between;  /* 添加这行，让内容两端对齐 */
+  justify-content: space-between; /* 添加这行，让内容两端对齐 */
   margin-bottom: 0.5rem;
   font-weight: 600;
   color: var(--text-color);
@@ -595,7 +603,7 @@ a.qr-btn {
 
 /* 添加点击波纹效果 */
 .title-link::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: 4px;
@@ -647,7 +655,7 @@ a.qr-btn {
   font-size: 0.9em;
   color: var(--secondary-text);
   margin-bottom: 0.5rem;
-  padding-right: 2.5rem;  /* 避免与二维码重叠 */
+  padding-right: 2.5rem; /* 避免与二维码重叠 */
 }
 
 .share-item .info div {
@@ -691,7 +699,7 @@ a.qr-btn {
 
 /* 确保标题文字不会与图标重叠 */
 .share-item .title-text {
-  margin-right: 80px;  /* 为图标预留空间 */
+  margin-right: 80px; /* 为图标预留空间 */
 }
 
 /* 统计卡片 */
@@ -748,7 +756,6 @@ a.qr-btn {
   color: #c62828;
 }
 
-
 /* 密码输入组件 */
 .password-input-group {
   position: relative;
@@ -775,18 +782,17 @@ a.qr-btn {
 /* 管理员登录按钮 */
 .admin-login .actions {
   display: flex;
-  gap: 1rem;  /* 添加按钮之间的间距 */
+  gap: 1rem; /* 添加按钮之间的间距 */
   margin-top: 1rem;
 }
 
 .admin-login .actions .btn {
-  flex: 1;  /* 让按钮平均分配空间 */
+  flex: 1; /* 让按钮平均分配空间 */
 }
 
 .admin-login .actions .btn:last-child {
-  background: #95a5a6;  /* 取消按钮使用不同的颜色 */
+  background: #95a5a6; /* 取消按钮使用不同的颜色 */
 }
-
 
 /* 确认对话框样式 */
 .confirm-dialog {
@@ -846,7 +852,6 @@ a.qr-btn {
   background-color: #c0392b !important;
 }
 
-
 /* Markdown 复选框 */
 .markdown-toggle {
   display: flex;
@@ -870,29 +875,30 @@ a.qr-btn {
   gap: 1rem;
   height: 600px;
   min-height: 400px;
-  width: 100%;         /* 限制最大宽度 */
-  max-width: 100%;     /* 限制最大宽度 */
+  width: 100%; /* 限制最大宽度 */
+  max-width: 100%; /* 限制最大宽度 */
   position: relative;
   resize: both;
   overflow: auto;
   margin: 1rem 0;
 }
 
-.editor, .preview {
+.editor,
+.preview {
   flex: 1;
-  padding: 1rem;
+  padding: 0rem;
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  overflow-y: auto;
+  overflow-y: hidden;
   position: relative;
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  width: 0;             /* 强制flex子项不超出容器 */
-  min-width: 0;         /* 允许flex子项收缩 */
+  width: 0; /* 强制flex子项不超出容器 */
+  min-width: 0; /* 允许flex子项收缩 */
   min-width: calc(50% - 0.5rem); /* 确保最小宽度不会小于容器的一半减去间距 */
 }
 
@@ -905,17 +911,17 @@ a.qr-btn {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-  padding: 0;
+  padding: 1rem;
   margin: 0;
   background: transparent;
-  white-space: pre-wrap;       /*  保留换行符并自动换行 */
-  word-wrap: break-word;       /*  允许单词内换行 */
-  overflow-wrap: break-word;   /*  确保长单词会换行 */
+  white-space: pre-wrap; /*  保留换行符并自动换行 */
+  word-wrap: break-word; /*  允许单词内换行 */
+  overflow-wrap: break-word; /*  确保长单词会换行 */
 }
 
 /* 拉伸手柄样式优化 */
 .editor-container::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -1013,16 +1019,16 @@ a.qr-btn {
 }
 
 /* 优化文本渲染 */
-.editor, .preview {
+.editor,
+.preview {
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
 
-
 /* Markdown 内容样式优化 */
 .content {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-color);
@@ -1086,7 +1092,7 @@ a.qr-btn {
   word-wrap: break-word; /* 允许长单词换行 */
   word-break: break-all; /* 允许在任意字符处换行 */
   max-width: 100%; /* 限制最大宽度 */
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 0.9em;
   line-height: 1.6;
   position: relative;
@@ -1124,7 +1130,7 @@ a.qr-btn {
   font-size: 0.9em;
   background-color: rgba(27, 31, 35, 0.05);
   border-radius: 3px;
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   color: #476582;
   vertical-align: baseline; /* 确保行内代码垂直对齐 */
 }
@@ -1547,9 +1553,9 @@ a.qr-btn {
 
 /* 管理面板操作按钮 */
 .admin-actions {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .control-btn {
@@ -1587,16 +1593,16 @@ a.qr-btn {
 
 /* 上传禁用状态 */
 .upload-disabled {
-    text-align: center;
-    padding: 2rem;
-    background: #f8f9fa;
-    border-radius: 8px;
-    color: #666;
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #666;
 }
 
 .upload-disabled p {
-    margin: 0;
-    font-size: 1.1rem;
+  margin: 0;
+  font-size: 1.1rem;
 }
 
 /* 存储信息组件 */
@@ -1653,12 +1659,17 @@ a.qr-btn {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* 按钮交互效果 */
 .btn {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
@@ -1679,7 +1690,7 @@ a.qr-btn {
 }
 
 .btn::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1706,7 +1717,6 @@ a.qr-btn {
     opacity: 0;
   }
 }
-
 
 /* 复制成功提示样式 */
 .copy-toast {
@@ -1750,8 +1760,8 @@ a.qr-btn {
 
 /* 全局滚动条样式 */
 ::-webkit-scrollbar {
-  width: 12px;  
-  height: 12px;  
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -1760,20 +1770,24 @@ a.qr-btn {
 
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
-  border-radius: 6px;  
-  border: 3px solid transparent;  
+  border-radius: 6px;
+  border: 3px solid transparent;
   background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb);
-  border: 3px solid transparent;  
+  border: 3px solid transparent;
   background-clip: padding-box;
 }
 
 @keyframes border-dance {
-  0% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: 100; }
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 100;
+  }
 }
 
 /* 编辑器工具栏 */
@@ -1867,7 +1881,7 @@ a.qr-btn {
 }
 
 .size-limit-warning::before {
-  content: '⚠️';
+  content: "⚠️";
   margin-right: 0.5rem;
 }
 
@@ -1895,15 +1909,27 @@ a.qr-btn {
   font-size: 14px;
 }
 
-.file-type-icon.image { background-image: url('data:image/svg+xml,...'); }
-.file-type-icon.document { background-image: url('data:image/svg+xml,...'); }
-.file-type-icon.archive { background-image: url('data:image/svg+xml,...'); }
+.file-type-icon.image {
+  background-image: url("data:image/svg+xml,...");
+}
+.file-type-icon.document {
+  background-image: url("data:image/svg+xml,...");
+}
+.file-type-icon.archive {
+  background-image: url("data:image/svg+xml,...");
+}
 
 /* 链接复制成功动画 */
 @keyframes copy-success {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .copy-success {
@@ -1924,9 +1950,16 @@ a.qr-btn {
 
 /* 文件上传错误抖动效果 */
 @keyframes upload-error-shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
 }
 
 .upload-error {
@@ -1955,7 +1988,7 @@ a.qr-btn {
 
 /* 文件拖放提示优化 */
 .file-drop::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border: 2px dashed var(--border-color);
@@ -1970,12 +2003,12 @@ a.qr-btn {
   animation: border-dance 1s linear infinite;
 }
 
-
 .file-drop::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(45deg, 
+  background: linear-gradient(
+    45deg,
     rgba(52, 152, 219, 0.1) 25%,
     transparent 25%,
     transparent 50%,
@@ -1995,8 +2028,12 @@ a.qr-btn {
 }
 
 @keyframes bg-scroll {
-  0% { background-position: 0 0; }
-  100% { background-position: 20px 20px; }
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
 }
 
 /* 优化文件列表项动画 */
@@ -2021,12 +2058,12 @@ a.qr-btn {
 }
 
 .copy-btn::before {
-  content: '已复制!';
+  content: "Copied!";
   position: absolute;
   top: -30px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 4px 8px;
   border-radius: 4px;
@@ -2046,7 +2083,7 @@ a.qr-btn {
 }
 
 .tab::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -2070,7 +2107,7 @@ a.qr-btn {
   margin: 1rem 0;
   border-radius: 4px;
   animation: error-in 0.3s ease-out;
-} 
+}
 
 @keyframes error-in {
   from {
@@ -2092,7 +2129,7 @@ a.qr-btn {
 }
 
 .loading::after {
-  content: '';
+  content: "";
   width: 16px;
   height: 16px;
   border: 2px solid #f3f3f3;
@@ -2102,8 +2139,12 @@ a.qr-btn {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* 优化按钮禁用状态 */
@@ -2114,15 +2155,15 @@ a.qr-btn {
 }
 
 .btn:disabled::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: repeating-linear-gradient(
     45deg,
     transparent,
     transparent 5px,
-    rgba(255,255,255,0.1) 5px,
-    rgba(255,255,255,0.1) 10px
+    rgba(255, 255, 255, 0.1) 5px,
+    rgba(255, 255, 255, 0.1) 10px
   );
 }
 
@@ -2159,7 +2200,7 @@ a.qr-btn {
   border-radius: 4px;
   overflow: hidden;
   margin: 8px 0;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .progress-bar-inner {
@@ -2195,11 +2236,11 @@ a.qr-btn {
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background-image: linear-gradient(
     45deg,
-    rgba(255, 255, 255, .15) 25%,
+    rgba(255, 255, 255, 0.15) 25%,
     transparent 25%,
     transparent 50%,
-    rgba(255, 255, 255, .15) 50%,
-    rgba(255, 255, 255, .15) 75%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
     transparent 75%,
     transparent
   );
@@ -2247,31 +2288,35 @@ a.qr-btn {
 
 /* 进度条动画 */
 @keyframes progress-bar-stripes {
-  from { background-position: 1rem 0; }
-  to { background-position: 0 0; }
+  from {
+    background-position: 1rem 0;
+  }
+  to {
+    background-position: 0 0;
+  }
 }
 
 /* 编辑器组件 */
 .editor {
   flex: 1;
-  padding: 1rem;
+  padding: 0rem;
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  overflow-y: auto;
+  overflow-y: hidden;
   position: relative;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  white-space: pre-wrap;       /* 保留换行符并自动换行 */
-  max-width: 100%;            /*  限制最大宽度 */
+  white-space: pre-wrap; /* 保留换行符并自动换行 */
+  max-width: 100%; /*  限制最大宽度 */
 }
 
 /* 预览区域的引用块样式 */
 .preview blockquote {
-  margin: 0;  /* 移除外边距 */
-  padding: 0.4em 1em;  /* 使用相等的上下内边距 */
+  margin: 0; /* 移除外边距 */
+  padding: 0.4em 1em; /* 使用相等的上下内边距 */
   color: var(--markdown-blockquote-text);
   border-left: 0.25em solid var(--markdown-blockquote-border);
   background: var(--markdown-blockquote-bg);
@@ -2279,13 +2324,13 @@ a.qr-btn {
 }
 
 .preview blockquote p {
-  margin: 0;  /* 移除段落边距 */
+  margin: 0; /* 移除段落边距 */
   line-height: 1.6;
 }
 
 /* 预览区域列表中的引用块 */
 .preview li > blockquote {
-  margin: 0.3em 0;  /* 在列表项中添加小的外边距 */
+  margin: 0.3em 0; /* 在列表项中添加小的外边距 */
   width: calc(100% - 1em);
 }
 
@@ -2303,7 +2348,7 @@ a.qr-btn {
   overflow-y: auto;
   background: var(--markdown-preview-bg);
   color: var(--text-color);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -2329,51 +2374,55 @@ a.qr-btn {
   color: var(--text-color);
 }
 
-
 /* 有序列表样式 */
 .preview ol {
-    list-style: none;
-    counter-reset: section;
-    padding-left: 2em;
-    margin: 0.5em 0;
+  list-style: none;
+  counter-reset: section;
+  padding-left: 2em;
+  margin: 0.5em 0;
 }
 
 .preview ol li {
-    position: relative;
-    padding-left: 0.5em;
-    margin: 0.5em 0;
+  position: relative;
+  padding-left: 0.5em;
+  margin: 0.5em 0;
 }
 
 /* 一级列表 */
 .preview ol > li {
-    counter-increment: section;
+  counter-increment: section;
 }
 
 .preview ol > li::before {
-    content: counter(section) ".";
-    position: absolute;
-    left: -2em;
-    width: 1.5em;
-    text-align: right;
-    color: var(--text-color);
+  content: counter(section) ".";
+  position: absolute;
+  left: -2em;
+  width: 1.5em;
+  text-align: right;
+  color: var(--text-color);
 }
 
 /* 二级和三级列表 */
 .preview ol ol {
-    margin-left: 0.5em;
+  margin-left: 0.5em;
 }
 
 /* 自动重置计数器并设置正确的编号 */
 .preview ol ol,
 .preview ol ol ol {
-    counter-reset: section;
+  counter-reset: section;
+}
+
+.preview pre {
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 /* 添加主题切换按钮样式 */
 .theme-toggle {
   position: fixed;
   top: 10px;
-  left: 10px;  /* 改为左侧 */
+  left: 10px; /* 改为左侧 */
   z-index: 1000;
   background: none;
   border: none;
@@ -2451,11 +2500,11 @@ a.qr-btn {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: clamp(1rem, 3vw, 2rem);  /* 使用 clamp 实现响应式内边距 */
-  min-height: 100vh;                 /* 确保容器至少占满视口高度 */
+  padding: clamp(1rem, 3vw, 2rem); /* 使用 clamp 实现响应式内边距 */
+  min-height: 100vh; /* 确保容器至少占满视口高度 */
   display: flex;
   flex-direction: column;
-  align-items: center;               /* 内容水平居中 */
+  align-items: center; /* 内容水平居中 */
 }
 
 /* 响应式布局断点系统 */
@@ -2485,7 +2534,7 @@ a.qr-btn {
   .card {
     min-width: 700px;
   }
-  
+
   .editor-container {
     height: 500px;
   }
@@ -2513,7 +2562,8 @@ a.qr-btn {
     resize: vertical;
   }
 
-  .editor, .preview {
+  .editor,
+  .preview {
     height: 300px;
     min-width: auto;
     width: 100%;
@@ -2537,7 +2587,7 @@ a.qr-btn {
   .content table td {
     padding: 0.6em 0.8em;
   }
-  
+
   .content table th:nth-child(1),
   .content table td:nth-child(1),
   .content table th:nth-child(2),
@@ -2563,7 +2613,7 @@ a.qr-btn {
   }
 
   .admin-panel {
-    right: 70px;  
+    right: 70px;
   }
 
   .admin-content {
@@ -2593,9 +2643,9 @@ a.qr-btn {
   }
 
   .share-item .actions button {
-    flex: 1;  /* 平均分配宽度 */
-    padding: 0.4rem;  /* 减小内边距使按钮更紧凑 */
-    font-size: 0.85rem;  /* 稍微减小字体大小 */
+    flex: 1; /* 平均分配宽度 */
+    padding: 0.4rem; /* 减小内边距使按钮更紧凑 */
+    font-size: 0.85rem; /* 稍微减小字体大小 */
   }
 
   .link {
@@ -2624,16 +2674,16 @@ a.qr-btn {
   .editor-container {
     flex-direction: column;
     height: 400px;
-    min-height: 300px;  // 可以调整这个值
+    min-height: 300px; // 可以调整这个值
   }
 
-  .editor, .preview {
-    height: 400px;     // 可以调整这个值
+  .editor,
+  .preview {
+    height: 400px; // 可以调整这个值
     min-width: auto;
     width: 100%;
   }
 
-  
   .admin-content {
     width: 55%;
     right: 0;
@@ -2683,19 +2733,18 @@ a.qr-btn {
   }
 
   .share-item .actions button {
-    flex: 1;  /* 平均分配宽度 */
-    padding: 0.4rem;  /* 减小内边距使按钮更紧凑 */
-    font-size: 0.85rem;  /* 稍微减小字体大小 */
+    flex: 1; /* 平均分配宽度 */
+    padding: 0.4rem; /* 减小内边距使按钮更紧凑 */
+    font-size: 0.85rem; /* 稍微减小字体大小 */
   }
 }
 
 /* 手机设备 (≤ 480px) */
 @media (max-width: 480px) {
-
   .content {
     overflow-x: auto;
   }
-  
+
   .content table {
     min-width: 100%;
   }
@@ -2713,7 +2762,8 @@ a.qr-btn {
     min-height: 300px;
   }
 
-  .editor, .preview {
+  .editor,
+  .preview {
     height: 300px;
     min-width: auto;
   }
@@ -2814,21 +2864,21 @@ a.qr-btn {
   }
 
   .share-item .actions button {
-    flex: 1;  /* 平均分配宽度 */
-    padding: 0.4rem;  /* 减小内边距使按钮更紧凑 */
-    font-size: 0.85rem;  /* 稍微减小字体大小 */
+    flex: 1; /* 平均分配宽度 */
+    padding: 0.4rem; /* 减小内边距使按钮更紧凑 */
+    font-size: 0.85rem; /* 稍微减小字体大小 */
   }
 
   .file-item {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .file-item .actions {
     width: 100%;
     margin-top: 0.5rem;
   }
-  
+
   .file-preview {
     padding: 0.5rem;
   }
@@ -6655,19 +6705,19 @@ const html = `<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudPaste - 在线剪贴板</title>
-    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.prod.min.js"></script>
-    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/marked/4.0.2/marked.min.js"></script>
-    <link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/github.min.css">
-    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/highlight.min.js"></script>
-    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <!-- 添加 KaTeX 支持 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    <style>${styles}</style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+    <title>CloudPaste - Online Pastebin</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github.min.css">
+<style>${styles}</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.31/vue.global.prod.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
 </head>
 <body>
     <div id="app">
@@ -6695,64 +6745,63 @@ const shareHtml = `<!DOCTYPE html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudPaste - 分享内容</title>
-    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.prod.min.js"></script>
-    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/marked/4.0.2/marked.min.js"></script>
-    <link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/github.min.css">
-    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/highlight.min.js"></script>
-    <!-- 添加 KaTeX 支持 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    <style>${styles}</style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <!-- 修改 docx.js 的加载方式 -->
-    <script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
+    <title>CloudPaste - Shared Content</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.31/vue.global.prod.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docx@7.8.2/build/index.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<style>${styles}</style>
   </head>
   <body>
-    <div id="app" v-cloak>
+
+<div id="app" v-cloak>
       <div class="container">
         <!-- 主题切换按钮 -->
         <button 
           class="theme-toggle" 
           @click="toggleTheme" 
-          :title="'当前主题: ' + currentTheme"
+          :title="'Current Theme: ' + currentTheme"
           v-text="themeIcon"
         ></button>
 
         <div class="card">
           <div v-if="loading" class="loading-state">
             <div class="loading-spinner"></div>
-            <p>正在加载内容，请稍候...</p>
+            <p>Loading content, please wait...</p>
           </div>
           <div v-else-if="needPassword">
             <div class="input-group">
-              <label>此内容需要密码访问：</label>
+              <label>This content requires a password:</label>
               <input 
                 type="password" 
                 v-model="password"
                 @keyup.enter="submitPassword"
-                placeholder="请输入密码"
+                placeholder="Enter password"
               >
             </div>
             <div v-if="error" class="error" style="margin: 10px 0;">{{ error }}</div>
-            <button class="btn" @click="submitPassword">确认</button>
+            <button class="btn" @click="submitPassword">Confirm</button>
           </div>
           <div v-else>
             <div v-if="error" class="error">{{ error }}</div>
             <template v-else>
               <!-- 文件分享部分 -->
               <div v-if="isFile && fileInfo" class="content">
-                <h3>文件信息</h3>
-                <p>文件名: {{ fileInfo.filename }}</p>
-                <p>文件大小: {{ (fileInfo.size / 1024 / 1024).toFixed(2) }} MB</p>
-                <p>上传时间: {{ new Date(fileInfo.uploadedAt).toLocaleString() }}</p>
-                <p>过期时间: {{ fileInfo.expiresAt ? new Date(fileInfo.expiresAt).toLocaleString() : '永不过期' }}</p>
+                <h3>File Information</h3>
+                <p>File Name: {{ fileInfo.filename }}</p>
+                <p>File Size: {{ (fileInfo.size / 1024 / 1024).toFixed(2) }} MB</p>
+                <p>Uploaded At: {{ new Date(fileInfo.uploadedAt).toLocaleString() }}</p>
+                <p>Expires At: {{ fileInfo.expiresAt ? new Date(fileInfo.expiresAt).toLocaleString() : 'Never Expires' }}</p>
                 <!-- 剩余下载次数显示 -->
                 <p v-if="fileInfo.maxViews > 0">
-                  剩余下载次数: {{ fileInfo.maxViews - fileInfo.viewCount }}
-                  (已下载 {{ fileInfo.viewCount }} 次)
+                  Remaining Downloads: {{ fileInfo.maxViews - fileInfo.viewCount }}
+                  (Downloaded {{ fileInfo.viewCount }} times)
                 </p>
                 
                 <!-- 按钮容器 -->
@@ -6763,38 +6812,38 @@ const shareHtml = `<!DOCTYPE html>
                     :disabled="downloading"
                   >
                     <span v-if="downloading" class="loading-spinner"></span>
-                    {{ downloading ? '准备下载中...' : '下载文件' }}
+                    {{ downloading ? 'Preparing Download...' : 'Download File' }}
                   </button>
                   <button 
                     v-if="isAdmin && !isFileEditing" 
                     class="btn" 
                     @click="startFileEdit"
                   >
-                    编辑设置
+                    Edit Settings
                   </button>
                 </div>
                 
                 <template v-if="isFileEditing">
                   <div class="settings" style="margin: 1rem 0;">
                     <div class="input-group">
-                      <label>过期时间</label>
+                      <label>Expires In</label>
                       <select v-model="editFileExpiresIn" class="form-select">
-                        <option value="1h">1小时</option>
-                        <option value="1d">1天</option>
-                        <option value="7d">7天</option>
-                        <option value="30d">30天</option>
-                        <option value="never">永不过期</option>
+                        <option value="1h">1 hour</option>
+                        <option value="1d">1 day</option>
+                        <option value="7d">7 days</option>
+                        <option value="30d">30 days</option>
+                        <option value="never">Never Expires</option>
                       </select>
                     </div>
                     
                     <div class="input-group">
-                      <label>可下载次数 (0表示无限制)</label>
+                      <label>Max Downloads (0 for unlimited)</label>
                       <input 
                         type="number" 
                         v-model="editFileMaxViews"
                         min="0"
                         placeholder="0"
-                        title="设置文件可以被下载的次数，0或留空表示无限制"
+                        title="Set the number of times the file can be downloaded, 0 or leave blank for unlimited"
                       >
                     </div>
                   </div>
@@ -6805,14 +6854,14 @@ const shareHtml = `<!DOCTYPE html>
                       @click="saveFileEdit" 
                       style="margin-right: 0.5rem;"
                     >
-                      保存
+                      Save
                     </button>
                     <button 
                       class="btn" 
                       style="background: #95a5a6;" 
                       @click="cancelFileEdit"
                     >
-                      取消
+                      Cancel
                     </button>
                   </div>
                 </template>
@@ -6824,8 +6873,8 @@ const shareHtml = `<!DOCTYPE html>
                 <div class="content-controls">
                   <div class="left-controls">
                     <button class="btn" @click="copyContent" v-if="!isEditing">
-                      <span v-if="!copied">复制内容</span>
-                      <span v-else>已复制!</span>
+                      <span v-if="!copied">Copy Content</span>
+                      <span v-else>Copied!</span>
                     </button>
                     <button 
                       v-if="isAdmin" 
@@ -6833,22 +6882,22 @@ const shareHtml = `<!DOCTYPE html>
                       @click="startEdit" 
                       :disabled="isEditing"
                     >
-                      编辑内容
+                      Edit Content
                     </button>
                   </div>
                   
                   <div class="export-group" v-if="!isEditing">
                     <select v-model="exportFormat">
-                      <option value="pdf">PDF格式</option>
-                      <option value="docx">Word文档</option>
-                      <option value="image">图片(png)</option>
+                      <option value="pdf">PDF Format</option>
+                      <option value="docx">Word Document</option>
+                      <option value="image">Image (png)</option>
                     </select>
                     <button 
                       class="btn" 
                       @click="exportContent" 
                       :disabled="isExporting"
                     >
-                      {{ isExporting ? '导出中...' : '导出' }}
+                      {{ isExporting ? 'Exporting...' : 'Export' }}
                     </button>
                   </div>
                 </div>
@@ -6856,13 +6905,13 @@ const shareHtml = `<!DOCTYPE html>
                 <!-- 内容区域 -->
                 <div class="content">
                   <div v-if="isEditing">
-                    <div class="editor-container"> 
+                    <div class="editor-container">
                       <div class="editor">
                         <textarea
                           v-model="editContent"
                           style="width: 100%; height: 100%; padding: 1rem; border: none; outline: none; resize: none;"
                         ></textarea>
-              </div>
+                      </div>
                       <!-- Markdown 预览区域 -->
                       <div 
                         v-if="editMarkdown" 
@@ -6881,30 +6930,30 @@ const shareHtml = `<!DOCTYPE html>
                             id="edit-markdown-toggle" 
                             v-model="editMarkdown"
                           >
-                          <label for="edit-markdown-toggle">启用 Markdown</label>
+                          <label for="edit-markdown-toggle">Enable Markdown</label>
                         </div>
                       </div>
                       
                       <!-- 过期时间选择框 -->
                       <div class="input-group">
-                        <label>过期时间</label>
+                        <label>Expires In</label>
                         <select v-model="editExpiresIn" class="form-select">
-                          <option value="1h">1小时</option>
-                          <option value="1d">1天</option>
-                          <option value="7d">7天</option>
-                          <option value="30d">30天</option>
-                          <option value="never">永不过期</option>
+                          <option value="1h">1 hour</option>
+                          <option value="1d">1 day</option>
+                          <option value="7d">7 days</option>
+                          <option value="30d">30 days</option>
+                          <option value="never">Never Expires</option>
                         </select>
                       </div>
 
                       <!-- 访问次数输入框 -->
                       <div class="input-group">
-                        <label>可访问次数</label>
+                        <label>Max Views</label>
                         <input 
                           type="number" 
                           v-model="editMaxViews"
                           min="0"
-                          placeholder="0表示无限制"
+                          placeholder="0 for unlimited"
                           class="form-input"
                         >
                       </div>
@@ -6917,14 +6966,14 @@ const shareHtml = `<!DOCTYPE html>
                         @click="saveEdit" 
                         style="margin-right: 0.5rem;"
                       >
-                        保存
+                        Save
                       </button>
                       <button 
                         class="btn" 
                         style="background: #95a5a6;" 
                         @click="cancelEdit"
                       >
-                        取消
+                        Cancel
                       </button>
                     </div>
                   </div>
@@ -6936,8 +6985,8 @@ const shareHtml = `<!DOCTYPE html>
                 <div class="expiry-info">
                   <span>{{ formatExpiryTime }}</span>
                   <span v-if="maxViews > 0" class="view-count-info">
-                    · 剩余访问次数: {{ maxViews - viewCount }}
-                    (已访问 {{ viewCount }} 次)
+                    · Remaining Views: {{ maxViews - viewCount }}
+                    (Viewed {{ viewCount }} times)
                   </span>
                 </div>
               </div>
@@ -6946,6 +6995,8 @@ const shareHtml = `<!DOCTYPE html>
         </div>
       </div>
     </div>
+  
+
     <style>
       /* 隐藏 v-cloak 初始化之前会隐藏模板内容 */
       [v-cloak] {
